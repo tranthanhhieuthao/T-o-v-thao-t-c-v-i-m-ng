@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<b style="font-size: 20px"> Sample Screen:</b>
+<br/>
+<br/>
+<input id="Nhapso" style="width: 200px ;height: 30px"/>
+<input type="button" style="height: 30px" value="Add" onclick="ham()"/>
+<input type="button" style="height: 30px" value="Display" onclick="ham1()"/>
+<input type="button" style="height: 30px" value="DisplayMang" onclick="ham2()"/>
+<br/>
+<br/>
+<p id="Result1"></p>
+<p id="Result2"></p>
+<script>
+    let i=0;
+    let mang = new Array();
+function ham() {
+    // mang[i] = document.getElementById("Nhapso").value;
+    // i++;
+    // document.getElementById("Nhapso").value="";
+    let nhapso=document.getElementById("Nhapso").value;
+    mang.push(nhapso);
+    i++;
+    document.getElementById("Nhapso").value="";
+}
+    function ham1() {
+     let e="<hr width=\"30%\" align=\"left\"/>";
+     for (let i = 0; i < mang.length; i++) {
+             e +="Element"+" "+i+" "+"="+mang[i]+"<br/>";
+         }
+      document.getElementById("Result1").innerHTML =e ;
+}
+function ham2() {
+    let e="<hr width=\"30%\" align=\"left\"/>";
+    e +="mang"+"="+"["+mang.valueOf()+"]";
+    document.getElementById("Result2").innerHTML =e ;
+}
+
+
+
+</script>
+</body>
+</html>
